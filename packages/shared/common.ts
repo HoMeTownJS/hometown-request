@@ -7,10 +7,11 @@ export function createDefaultRequestConfig(requestConfig?: RequestConfig) {
     codeKey: 'code',
     dataKey: 'data',
     msgKey: 'message',
+    backendSuccessCode: 200,
     onRequest: async config => config,
     onBackendSuccess: responseData => {
-      const BACKEND_SUCCESS_CODE = 200;
-      const { codeKey } = configs;
+      const { codeKey, backendSuccessCode } = configs;
+      const BACKEND_SUCCESS_CODE = backendSuccessCode;
       return responseData[codeKey] === BACKEND_SUCCESS_CODE;
     },
     onBackendFail: async () => {},

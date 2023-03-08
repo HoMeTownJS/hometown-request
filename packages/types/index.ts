@@ -56,6 +56,8 @@ export interface RequestConfig {
   dataKey: string;
   /** 表示后端消息的属性字段 */
   msgKey: string;
+  /** 表示后端请求成功的code码 */
+  backendSuccessCode: number;
   /**
    * 请求前的钩子函数
    * @param config 请求配置

@@ -6,6 +6,10 @@ const request = createRequest(
     codeKey: 'code',
     dataKey: 'data',
     msgKey: 'msg',
+    onRequest: requestConfig => {
+      console.log(requestConfig.headers);
+      return requestConfig;
+    },
     onBackendSuccess(responseData) {
       const isObject = Object.prototype.toString.call(responseData) === '[Object object]';
 

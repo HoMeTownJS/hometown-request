@@ -61,7 +61,7 @@ class Request {
           return Promise.reject(handleBackendError(response, { codeKey, msgKey }));
         }
 
-        return Promise.reject(handleHttpError(response));
+        return Promise.reject(this.requestConfig.onError(handleHttpError(response)));
       },
       error => handleAxiosError(error)
     );
