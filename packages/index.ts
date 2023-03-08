@@ -78,3 +78,5 @@ export function createRequest(axiosConfig?: AxiosRequestConfig, requestConfig?: 
 
   return request.axiosInstance;
 }
+
+export * from './types/index';
